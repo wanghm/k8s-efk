@@ -14,7 +14,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: grafana
+            name: kibana
             port:
               number: 5601
- 
