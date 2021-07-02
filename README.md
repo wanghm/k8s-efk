@@ -17,29 +17,19 @@ ingress-nginx-controller-admission   ClusterIP      172.19.215.144   <none>     
 <image src=./images/EFK_architecture.png width=640>
 
 ## インストール
-### 1.namespace作成
-
 ```
-kubectl create ns logging
-```
-### 2.elasticsearchをインストール
-```
-kubectl apply -f elasticsearch.yaml
-```
-### 3.kibanaをインストール
-```
-kubectl apply -f kibana.yaml
-```
-
-### 4.fluentdをインストール
-```
-kubectl apply -f fluentd-rbac.yaml
-kubectl apply -f fluentd.yaml
+kubectl -f kube-logging.yaml
+kubectl -f elasticsearch.yaml
+kubectl -f kibana.yaml
+kubectl -f fluentd.yaml
 ```
 ## 動作確認
-### ingress作成
 ```
-kubectl apply -f ingress-kibana.yaml
+# ingress作成
+kubectl apply -f ingress-elasticsearch-kibana.yaml
+
+# test log生成
+kubectl apply -f test-counter.yaml
 ```
 ### ホスト名： kibana.localを作業PCのhostsファイルに追記
 ```
