@@ -14,7 +14,7 @@ ingress-nginx-controller-admission   ClusterIP      172.19.215.144   <none>     
 
 ## 構成：
 
-<image src=./images/EFK_architecture.png width=640>
+<image src=./images/EFK.png width=640>
 
 ## インストール
 ```
