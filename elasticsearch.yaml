@@ -19,9 +19,11 @@ spec:
         image: docker.elastic.co/elasticsearch/elasticsearch:7.13.0
         resources:
             limits:
-              cpu: 1000m
+              cpu: 4
+              memory: 2Gi
             requests:
-              cpu: 100m
+              cpu: 0.6
+              memory: 600Mi
         ports:
         - containerPort: 9200
           name: rest
